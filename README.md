@@ -566,7 +566,7 @@ Group C: [04, 08]     # Migrations can run in parallel
 ```
 
 **Example:**
-```markdown
+````markdown
 # Project Memory
 
 ## Decisions Made
@@ -618,7 +618,8 @@ Group C: [04, 08]     # Migrations can run in parallel
 3. Pass data as props from server to client
 
 **Example:**
-```tsx
+
+```
 // app/posts/page.tsx (Server Component)
 import { PostList } from './PostList'
 import { getPosts } from '@/lib/posts'
@@ -649,7 +650,6 @@ export function PostList({ posts }) {
 3. Extract reusable field components
 
 **Example:**
-```tsx
 const loginSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8)
@@ -658,7 +658,6 @@ const loginSchema = z.object({
 const form = useForm({
   resolver: zodResolver(loginSchema)
 })
-```
 
 ---
 
@@ -673,7 +672,8 @@ const form = useForm({
 Next.js hot reload reinitializes modules, creating new Prisma instances
 
 **Solution:**
-```typescript
+
+```
 // lib/prisma.ts
 import { PrismaClient } from '@prisma/client'
 
@@ -698,7 +698,8 @@ Default next-auth types don't include custom user fields
 
 **Solution:**
 Create `types/next-auth.d.ts`:
-```typescript
+
+```
 import NextAuth from "next-auth"
 
 declare module "next-auth" {
@@ -768,7 +769,7 @@ After schema changes:
 - Layouts are shared across routes
 - Loading.tsx for automatic loading states
 - Error.tsx for error boundaries
-```
+````
 
 **Key Benefits:**
 - AI learns from past work
